@@ -1,0 +1,55 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+html{
+	background: black;
+    padding: 40px;
+}
+body{
+	border: 1px solid gray;
+}
+#type,#type1{
+	padding: 10px;
+}
+#daychecked,#sessionchecked{
+	padding: 10px;
+	color: white;
+}
+.heading{
+	display: flex;
+	justify-content: space-around;
+	font-size: 30px;
+	align-items: center;
+}
+.head{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+.gape{
+	padding: 10px;
+}
+h1{
+	color: white;
+}
+.time-content,.time-content1 {
+	border: 1px solid gray;
+	display: flex;
+	justify-content: space-around;
+	color: red;
+	border-radius: 5px;
+}
+.space{
+	margin: 30px;
+}
+input{
+	margin: 20px;
+}
+.words:checked{
+	accent-color:red;
+}
+.session:checked{
+	accent-color:red;
+}
