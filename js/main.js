@@ -24,10 +24,6 @@ setTimeout(function(){
 	var min= date.getMinutes();
 	var sec= date.getSeconds();
 	var timeSession=0;
-	hrDiv.innerHTML=hr;
-	minDiv.innerHTML=min;
-	secDiv.innerHTML=sec;
-	div1.append(hrDiv,minDiv,secDiv);
 	dateDiv.innerHTML=nowDate;
 	monthDiv.innerHTML=month;
 	yearDiv.innerHTML=year;
@@ -54,6 +50,10 @@ setTimeout(function(){
 	if(sec<10){
 		sec="0"+sec;
 	}
+	hrDiv.innerHTML=hr;
+	minDiv.innerHTML=min;
+	secDiv.innerHTML=sec;
+	div1.append(hrDiv,minDiv,secDiv);
 	var day=date.getDay();
 	var mark1=document.getElementsByClassName("words")[day];
 	mark1.setAttribute("checked",true);
