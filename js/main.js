@@ -42,8 +42,8 @@ setTimeout(function(){
 		hr=12;
 	} 
 	if(hr>=12){
-		timeSession=1;
 		hr=hr-12;
+		timeSession=1;
 	}
 	if(min<10){
 		min="0"+min;
