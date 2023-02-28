@@ -42,7 +42,7 @@ setTimeout(function(){
 		hr=12;
 	} 
 	if(hr>=12){
-		timeSession= 1;
+		timeSession=1;
 		hr=hr-12;
 	}
 	if(min<10){
@@ -57,7 +57,7 @@ setTimeout(function(){
 	var day=date.getDay();
 	var mark1=document.getElementsByClassName("words")[day];
 	mark1.setAttribute("checked",true);
-	var mark2=document.getElementsByClassName("session")[1];
+	var mark2=document.getElementsByClassName("session")[timeSession];
 	mark2.setAttribute("checked",true);
 	hrDiv.style.fontSize="70px";
 	minDiv.style.fontSize="70px";
