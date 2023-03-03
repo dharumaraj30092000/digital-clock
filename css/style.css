@@ -8,6 +8,7 @@ html{
 }
 body{
 	border: 1px solid gray;
+	border-radius: 5px;
 }
 #type,#type1{
 	padding: 10px;
@@ -35,14 +36,8 @@ h1{
 	color: white;
 }
 .time-content,.time-content1 {
-	border: 1px solid gray;
 	display: flex;
 	justify-content: space-around;
-	color: red;
-	border-radius: 5px;
-}
-.space{
-	margin: 30px;
 }
 input{
 	margin: 20px;
@@ -52,4 +47,12 @@ input{
 }
 .session:checked{
 	accent-color:red;
+}
+#date-set,#time-set {
+	border: 1px solid gray;
+	font-size: 60px;
+	color: red;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-around;
 }

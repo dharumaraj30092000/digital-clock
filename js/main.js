@@ -4,36 +4,39 @@ var div1=document.createElement("div");
 div.setAttribute("class","time-content");
 div1.setAttribute("class","time-content1");
 
-var htmlType=document.getElementById("type");
-var htmlType1=document.getElementById("type1");
-htmlType.appendChild(div);
-htmlType1.appendChild(div1);
+var dateDiv=document.getElementById("date-set");
+var timeDiv=document.getElementById("time-set");
 
-setTimeout(function(){
-	let date= new Date();
-	var dateDiv=document.createElement("div");
-	var monthDiv=document.createElement("div");
-	var yearDiv=document.createElement("div");
-	var hrDiv=document.createElement("div");
-	var minDiv=document.createElement("div");
-	var secDiv=document.createElement("div");
+function date(){
+	var date= new Date();
 	var nowDate= date.getDate();
 	var month= date.getMonth()+1;
 	var year= date.getFullYear()%100;
-	var hr= date.getHours();
-	var min= date.getMinutes();
-	var sec= date.getSeconds();
-	var timeSession=0;
-	dateDiv.innerHTML=nowDate;
-	monthDiv.innerHTML=month;
-	yearDiv.innerHTML=year;
-	div.append(dateDiv,monthDiv,yearDiv);
+	var showDate=document.getElementById("date");
+	var showMonth=document.getElementById("month");
+	var showYear=document.getElementById("year");
 	if(nowDate<10){
 		nowDate="0"+nowDate;
 	}
 	if(month<10){
 		month="0"+month;
 	}
+	showDate.innerHTML= nowDate;
+	showMonth.innerHTML= month;
+	showYear.innerHTML= year;
+	dateDiv.append(showDate,showMonth,showYear);
+}
+date();
+
+function time(){
+	var showHr=document.getElementById("hour");
+	var showMin=document.getElementById("minite");
+	var showSec=document.getElementById("seconds");
+	var date= new Date();
+	var hr= date.getHours();
+	var min= date.getMinutes();
+	var sec= date.getSeconds();
+	var timeSession=0;
 	if(hr==0){
 		hr=12;
 	} 
@@ -50,25 +53,14 @@ setTimeout(function(){
 	if(sec<10){
 		sec="0"+sec;
 	}
-	hrDiv.innerHTML=hr;
-	minDiv.innerHTML=min;
-	secDiv.innerHTML=sec;
-	div1.append(hrDiv,minDiv,secDiv);
+	showHr.innerHTML=hr;
+	showMin.innerHTML=min;
+	showSec.innerHTML=sec;
 	var day=date.getDay();
 	var mark1=document.getElementsByClassName("words")[day];
 	mark1.setAttribute("checked",true);
 	var mark2=document.getElementsByClassName("session")[timeSession];
 	mark2.setAttribute("checked",true);
-	hrDiv.style.fontSize="70px";
-	minDiv.style.fontSize="70px";
-	secDiv.style.fontSize="70px";
-	hrDiv.setAttribute("class","space");
-	minDiv.setAttribute("class","space");
-	secDiv.setAttribute("class","space");
-	dateDiv.style.fontSize="70px";
-	monthDiv.style.fontSize="70px";
-	yearDiv.style.fontSize="70px";
-	dateDiv.setAttribute("class","space");
-	monthDiv.setAttribute("class","space");
-	yearDiv.setAttribute("class","space");
-},1000);
+	timeDiv.append(showHr,showMin,showSec);
+};
+setInterval(time,1000);
